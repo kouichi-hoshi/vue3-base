@@ -5,7 +5,7 @@ import baseFooter from '../components/baseFooter.vue'
 </script>
 
 <template>
-  <div class="l-container">
+  <div class="l-container container mx-auto">
     <div class="l-header">
       <slot name="header">
         <baseHeader />

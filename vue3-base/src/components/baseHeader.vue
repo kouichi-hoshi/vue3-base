@@ -1,15 +1,38 @@
-<script setup>
-import logoMark from '../components/logoMark.vue'
-const siteTitle = import.meta.env.VITE_SITE_TITLE
-const siteText = import.meta.env.VITE_SITE_TEXT
-</script>
 <template>
   <header class="base-header">
-    <logoMark />
-    <h1>{{ siteTitle }}</h1>
-    <p>{{ siteText }}</p>
+    <div v-if="checkSlot('logo')" class="base-header__logo">
+      <slot name="logo"></slot>
+    </div>
+    <div v-if="checkSlot('title')" class="base-header__title">
+      <slot name="title"></slot>
+    </div>
+    <div v-if="checkSlot('text')" class="base-header__text">
+      <slot name="text"></slot>
+    </div>
+    <div v-if="checkSlot('navigation')" class="base-header__navigation">
+      <slot name="navigation"></slot>
+    </div>
   </header>
 </template>
+
+<script>
+export default {
+  name: 'BaseHeader',
+  props: {
+    baseHeaderSlot: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    checkSlot(item) {
+      if (this.baseHeaderSlot[item] === true) {
+        return true
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 // .base-header {

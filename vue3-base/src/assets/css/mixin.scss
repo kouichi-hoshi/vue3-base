@@ -1,0 +1,55 @@
+/**
+ * Media Queries
+ */
+// BreakPoint sm
+@mixin mq-sm {
+  @media (min-width: $screenSm) {
+    @content;
+  }
+}
+// BreakPoint md
+@mixin mq-md {
+  @media (min-width: $screenMd) {
+    @content;
+  }
+}
+// BreakPoint lg
+@mixin mq-lg {
+  @media (min-width: $screenLg) {
+    @content;
+  }
+}
+// BreakPoint xl
+@mixin mq-xl {
+  @media (min-width: $screenXl) {
+    @content;
+  }
+}
+
+@mixin text(
+  $ff: inherit,
+  $fs: normal,
+  $fw: 500,
+  $fontSize: 4rem,
+  $fontSizeMd: 6rem,
+  $lineHeight: 1.5,
+  $lineHeightMd: 2
+) {
+  font-family: $ff;
+  font-style: $fs;
+  font-weight: $fw;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  @include mq-md {
+    font-size: $fontSizeMd;
+    line-height: $lineHeightMd;
+  }
+}
+
+@mixin headlineMargin($start: 3, $end: 6, $position: top, $margin: $space * 2) {
+  @for $h from $start to $end {
+    h#{$h} {
+      margin-#{$position}: $margin;
+    }
+  }
+}

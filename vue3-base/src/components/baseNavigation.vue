@@ -6,18 +6,20 @@
       v-for="(link, key) in links"
       :key="key"
     >
-      <a
-        :href="link.href"
-        :target="isOuterLink(link.href) ? '_self' : '_blank'"
+      <component
+        :is="checkLinkType(link.href) ? 'router-link' : 'a'"
+        :to="checkLinkType(link.href) ? link.href : ''"
+        :href="checkLinkType(link.href) ? '' : link.href"
+        :target="checkLinkType(link.href) ? '' : '_blank'"
       >
         {{ link.label }}
-      </a>
+      </component>
     </component>
   </component>
 </template>
 
 <script>
-import isOuterLink from '../functions/isOuterLink.js'
+import checkLinkType from '../functions/checkLinkType.js'
 
 export default {
   name: 'LinkMenu',
@@ -47,7 +49,7 @@ export default {
   },
   data() {
     return {
-      isOuterLink
+      checkLinkType
     }
   }
 }

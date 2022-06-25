@@ -3,7 +3,7 @@
     <header>
       <h2>HOME</h2>
     </header>
-    <section class="items">
+    <section class="items container mx-auto">
       <header>
         <h3 class="items__title">Item</h3>
       </header>

@@ -60,7 +60,7 @@ const globalNavTag = 'li'
     </div>
 
     <div class="l-main">
-      <baseMain class="container mx-auto" />
+      <baseMain />
     </div>
 
     <div class="l-footer">

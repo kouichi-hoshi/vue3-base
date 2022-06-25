@@ -2,41 +2,72 @@ export default [
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: 'breakslow-UMUCQcDdLws-unsplash.jpg',
+    fileName: '001.jpg',
     href: '/'
   },
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: 'jakub-dziubak-XtUd5SiX464-unsplash.jpg',
+    fileName: '002.jpg',
     href: '/'
   },
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: 'mike-kenneally-TD4DBagg2wE-unsplash.jpg'
+    fileName: '003.jpg'
   },
   {
     title: 'cafe',
-    src: 'nathan-dumlao-6VhPY27jdps-unsplash.jpg',
-    href: '/'
-  },
-  {
-    title: 'cafe',
-    text: 'Smallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,saladssandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseating. Smallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates,salads&sandwichesanintimatesettingwith12indoorseatspluspatioseatingSmallplates.',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    fileName: '004.jpg',
     href: '/'
   },
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: 'shen-liu-2PUwRmJOdNo-unsplash.jpg'
+    fileName: '005.jpg',
+    href: '/'
   },
   {
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
-    src: 'toa-heftiba-W6sqUYlJRiw-unsplash.jpg'
+    href: '/',
+    fileName: '006.jpg'
   },
   {
-    src: 'wade-austin-ellis-4YApsoSaNKA-unsplash.jpg'
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    fileName: '007.jpg',
+    href: '/'
+  },
+  {
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    fileName: '008.jpg',
+    href: '/'
+  },
+  {
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    href: '/',
+    fileName: '009.jpg'
+  },
+  {
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    href: '/',
+    fileName: ''
+  },
+  {
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    href: '/',
+    fileName: '011.jpg'
+  },
+  {
+    title: 'cafe',
+    text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
+    href: '/',
+    fileName: '012.jpg'
   }
 ]

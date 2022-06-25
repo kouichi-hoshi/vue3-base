@@ -1,25 +1,4 @@
 {
-  "cSpell.words": [
-    "Apso",
-    "Avenir",
-    "Bagg",
-    "breakslow",
-    "dumlao",
-    "dziubak",
-    "heftiba",
-    "indoorseatspluspatioseating",
-    "jakub",
-    "jdps",
-    "kenneally",
-    "lintfix",
-    "saladssandwichesanintimatesettingwith",
-    "sandwichesanintimatesettingwith",
-    "shen",
-    "Smallplates",
-    "tailwind",
-    "tailwindcss",
-    "UMUC",
-    "Vite"
-  ],
+  "cSpell.words": ["Avenir", "lintfix", "tailwind", "tailwindcss", "Vite"],
   "editor.formatOnSave": true
 }

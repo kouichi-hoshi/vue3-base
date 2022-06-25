@@ -8,15 +8,20 @@
         <h3 class="items__title">Item</h3>
       </header>
       <div
-        class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-6"
+        class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
       >
         <template v-for="(item, key) in items" :key="key">
           <div class="items__item">
             <a :href="item.href">
-              <p v-if="item.src">
+              <p>
                 <img
-                  :src="'/src/assets/images/sample/' + item.src"
+                  :src="
+                    item.fileName
+                      ? '/src/assets/images/sample/' + item.fileName
+                      : '/src/assets/images/common/no-image.png'
+                  "
                   :alt="item.title"
+                  class="object-cover aspect-[3/2]"
                 />
               </p>
               <h4>{{ item.title }}</h4>

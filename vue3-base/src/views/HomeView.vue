@@ -1,6 +1,6 @@
 <template>
   <article class="main">
-    <header>
+    <header class="container mx-auto text-center">
       <h2>HOME</h2>
     </header>
     <section class="items container mx-auto">

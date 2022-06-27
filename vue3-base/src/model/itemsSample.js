@@ -56,7 +56,7 @@ export default [
     title: 'cafe',
     text: 'Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.',
     href: '/',
-    fileName: ''
+    fileName: '010.jpg'
   },
   {
     title: 'cafe',

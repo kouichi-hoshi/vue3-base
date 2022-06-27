@@ -1,4 +1,12 @@
 {
-  "cSpell.words": ["Avenir", "lintfix", "tailwind", "tailwindcss", "Vite"],
+  "cSpell.words": [
+    "Avenir",
+    "lintfix",
+    "Splide",
+    "splidejs",
+    "tailwind",
+    "tailwindcss",
+    "Vite"
+  ],
   "editor.formatOnSave": true
 }

@@ -11,6 +11,7 @@
     "fix": "npm run format && npm run lint"
   },
   "dependencies": {
+    "@splidejs/vue-splide": "^0.6.7",
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
     "vue": "^3.2.25",

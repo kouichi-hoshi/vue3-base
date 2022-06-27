@@ -16,25 +16,12 @@
       <div
         class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
       >
-        <template v-for="(item, key) in items" :key="key">
-          <div class="items__item">
-            <a :href="item.href">
-              <p>
-                <img
-                  :src="
-                    item.fileName
-                      ? '/src/assets/images/sample/' + item.fileName
-                      : '/src/assets/images/common/no-image.png'
-                  "
-                  :alt="item.title"
-                  class="object-cover aspect-[3/2]"
-                />
-              </p>
-              <h4>{{ item.title }}</h4>
-              <p>{{ item.text }}</p>
-            </a>
-          </div>
-        </template>
+        <cardPanel
+          card-class="items__item"
+          :items="items"
+          imgPath="/src/assets/images/sample/"
+          titleClass="mt-2 text-xl"
+        />
       </div>
     </section>
   </article>
@@ -43,6 +30,7 @@
 <script>
 import itemsSample from '../model/itemsSample.js'
 import SlideSplide from '../components/slideSplide.vue'
+import cardPanel from '../components/cardPanel.vue'
 
 export default {
   setup() {
@@ -74,7 +62,7 @@ export default {
       aspect
     }
   },
-  components: { SlideSplide }
+  components: { SlideSplide, cardPanel }
 }
 </script>
 

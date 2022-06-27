@@ -1,16 +1,19 @@
 <template>
-  <header class="base-header">
-    <div v-if="checkSlot('logo')" class="base-header__logo">
-      <slot name="logo"></slot>
+  <header class="l-base-header flex items-center bg-slate-100 p-8">
+    <div v-if="checkSlot('logo')" class="l-base-header__logo mr-2">
+      <slot name="logo" />
     </div>
-    <div v-if="checkSlot('title')" class="base-header__title">
-      <slot name="title"></slot>
+    <div v-if="checkSlot('title')" class="l-base-header__title mr-4">
+      <slot name="title" />
     </div>
-    <div v-if="checkSlot('text')" class="base-header__text">
-      <slot name="text"></slot>
+    <div v-if="checkSlot('text')" class="l-base-header__text mr-2">
+      <slot name="text" />
     </div>
-    <div v-if="checkSlot('navigation')" class="base-header__navigation">
-      <slot name="navigation"></slot>
+    <div
+      v-if="checkSlot('navigation')"
+      class="l-base-header__navigation flex-1"
+    >
+      <slot name="navigation" />
     </div>
   </header>
 </template>

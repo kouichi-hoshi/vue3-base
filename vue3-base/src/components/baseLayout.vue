@@ -3,6 +3,7 @@ import linkData from '../model/linkData.js'
 import snsLinkData from '../model/snsLinkData.js'
 import logoMark from '../components/logoMark.vue'
 import baseHeader from '../components/baseHeader.vue'
+import baseTitle from '../components/baseTitle.vue'
 import baseMain from '../components/baseMain.vue'
 import baseNavigation from '../components/baseNavigation.vue'
 import baseFooter from '../components/baseFooter.vue'
@@ -30,26 +31,26 @@ const globalNavTag = 'li'
     <div class="l-header">
       <baseHeader :base-header-slot="baseHeaderSlot">
         <template v-slot:logo>
-          <logoMark />
+          <logoMark class="logo-size" />
         </template>
         <template v-slot:title>
-          <h1>{{ siteTitle }}</h1>
+          <baseTitle :site-title="siteTitle" class="text-xl font-bold" />
         </template>
         <template v-slot:text>
           <p>{{ siteText }}</p>
         </template>
         <template v-slot:navigation>
-          <nav class="base-navigation">
+          <nav class="base-navigation flex justify-end">
             <ul class="flex">
               <baseNavigation
-                class="nav flex"
-                inner-class="mr-2"
+                class="flex"
+                inner-class="ml-6"
                 :links="linkData"
                 :outer-tag-name="globalNavTag"
               />
               <baseNavigation
-                class="nav-sns flex"
-                inner-class="mr-2"
+                class="flex"
+                inner-class="ml-6"
                 :links="snsLinkData"
                 :outer-tag-name="globalNavTag"
               />
@@ -74,8 +75,11 @@ const globalNavTag = 'li'
 <style lang="scss" scoped>
 // .l-container {
 // }
-// .l-header {
-// }
+.l-header {
+  .logo-size {
+    width: 40px;
+  }
+}
 // .l-main {
 // }
 // .l-footer {

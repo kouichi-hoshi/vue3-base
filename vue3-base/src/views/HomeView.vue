@@ -16,10 +16,10 @@
       <div
         class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
       >
-        <cardPanel
+        <repeatCard
           card-class="items__item"
           :items="items"
-          imgPath="/src/assets/images/sample/"
+          :imgPath="itemsPath"
           titleClass="mt-2 text-xl"
         />
       </div>
@@ -30,11 +30,13 @@
 <script>
 import itemsSample from '../model/itemsSample.js'
 import SlideSplide from '../components/slideSplide.vue'
-import cardPanel from '../components/cardPanel.vue'
+import repeatCard from '../components/repeatCard.vue'
 
 export default {
   setup() {
     const items = itemsSample // Itemセクションで表示するデータ
+    const itemsPath = '/src/assets/images/sample/' //Itemセクションで表示する画像のパス
+
     const slideData = {
       images: ['007.jpg', '008.jpg', '009.jpg', '011.jpg', '013.jpg'], // スライドで表示する画像
       src: 'src/assets/images/sample/', // 画像のパス
@@ -56,13 +58,14 @@ export default {
     const aspect = slideData.aspect
     return {
       items,
+      itemsPath,
       slideItems,
       slideOptions,
       ariaLabel,
       aspect
     }
   },
-  components: { SlideSplide, cardPanel }
+  components: { SlideSplide, repeatCard }
 }
 </script>
 

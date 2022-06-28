@@ -29,8 +29,8 @@ const globalNavTag = 'li'
 <template>
   <div class="l-container">
     <div
-      class="l-header"
-      v-scrollIn="{ interval: 1000, scroll: 500, element: '#copy-navigation' }"
+      class="l-header bg-slate-100"
+      v-scrollIn="{ interval: 1000, scroll: 1000, out: 100 }"
     >
       <baseHeader :base-header-slot="baseHeaderSlot">
         <template v-slot:logo>
@@ -77,27 +77,33 @@ const globalNavTag = 'li'
 </template>
 
 <style lang="scss" scoped>
-// .l-container {
-// }
-.l-header {
-  .logo-size {
-    width: 40px;
+$h-nav-h: 100px; // v-scrollInディレクティブのoutの値と同じにする
+
+.l-container {
+  .l-header {
+    height: $h-nav-h;
+    .l-base-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      transition: transform 0.4s;
+      transform: translateY(0);
+    }
+    &.close .l-base-header {
+      transition: transform 0.4s;
+      transform: translateY(-$h-nav-h);
+    }
+    &.active .l-base-header {
+      transform: translateY(0);
+    }
+    .logo-size {
+      width: 40px;
+    }
   }
-}
-// .l-main {
-// }
-// .l-footer {
-// }
-#copy-navigation {
-  // display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  transform: translateY(-200px);
-  transition: transform 0.4s;
-  &.active {
-    transform: translateY(0);
-  }
+  // .l-main {
+  // }
+  // .l-footer {
+  // }
 }
 </style>

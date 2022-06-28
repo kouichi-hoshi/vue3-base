@@ -28,7 +28,10 @@ const globalNavTag = 'li'
 
 <template>
   <div class="l-container">
-    <div class="l-header">
+    <div
+      class="l-header"
+      v-scrollIn="{ interval: 1000, scroll: 500, element: '#copy-navigation' }"
+    >
       <baseHeader :base-header-slot="baseHeaderSlot">
         <template v-slot:logo>
           <logoMark class="logo-size" />
@@ -69,6 +72,7 @@ const globalNavTag = 'li'
         <baseFooter />
       </slot>
     </div>
+    <div id="copy-navigation"></div>
   </div>
 </template>
 
@@ -84,4 +88,16 @@ const globalNavTag = 'li'
 // }
 // .l-footer {
 // }
+#copy-navigation {
+  // display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  transform: translateY(-200px);
+  transition: transform 0.4s;
+  &.active {
+    transform: translateY(0);
+  }
+}
 </style>

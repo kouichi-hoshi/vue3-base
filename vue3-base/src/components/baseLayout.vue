@@ -30,7 +30,7 @@ const globalNavTag = 'li'
   <div class="l-container">
     <div
       class="l-header bg-slate-100"
-      v-scrollIn="{ interval: 1000, scroll: 1000, out: 100 }"
+      :class="{ out: isOut, active: isActive }"
     >
       <baseHeader :base-header-slot="baseHeaderSlot">
         <template v-slot:logo>
@@ -83,19 +83,18 @@ $h-nav-h: 100px; // v-scrollInディレクティブのoutの値と同じにす�
   .l-header {
     height: $h-nav-h;
     .l-base-header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-      transition: transform 0.4s;
       transform: translateY(0);
     }
-    &.close .l-base-header {
+    &.out .l-base-header {
+      position: fixed;
+      top: -$h-nav-h;
+      width: 100%;
+      z-index: 2;
       transition: transform 0.4s;
       transform: translateY(-$h-nav-h);
     }
     &.active .l-base-header {
-      transform: translateY(0);
+      transform: translateY($h-nav-h);
     }
     .logo-size {
       width: 40px;
@@ -107,3 +106,38 @@ $h-nav-h: 100px; // v-scrollInディレクティブのoutの値と同じにす�
   // }
 }
 </style>
+
+<script>
+export default {
+  data: () => ({
+    out: 100, //ヘッダーナビゲーションが画面外に隠れるスクロール位置
+    active: 500, //ヘッダーナビゲーションが画面内にインするスクロール位置
+    isOut: false, //ヘッダーがアウトするフラグ
+    isActive: false //ヘッダーがインするフラグ
+  }),
+  created() {
+    window.addEventListener('scroll', this.onScrollNav)
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScrollNav)
+  },
+  methods: {
+    /**
+     * スクロール位置を検知し、指定位置でフラグをオン/オフする
+     */
+    onScrollNav() {
+      let scroll = window.scrollY
+      if (scroll > this.out) {
+        this.isOut = true
+      } else {
+        this.isOut = false
+      }
+      if (scroll > this.active) {
+        this.isActive = true
+      } else {
+        this.isActive = false
+      }
+    }
+  }
+}
+</script>

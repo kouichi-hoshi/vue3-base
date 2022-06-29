@@ -28,7 +28,11 @@ const globalNavTag = 'li'
 
 <template>
   <div class="l-container">
-    <div class="l-header">
+    <div
+      class="l-header bg-slate-100"
+      :class="{ slideUp: isNavFadeIn }"
+      ref="slideNavigation"
+    >
       <baseHeader :base-header-slot="baseHeaderSlot">
         <template v-slot:logo>
           <logoMark class="logo-size" />
@@ -72,10 +76,49 @@ const globalNavTag = 'li'
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      isNavFadeIn: false,
+      options: {
+        threshold: [1]
+      },
+      isIntersectingElement: false
+    }
+  },
+  mounted() {
+    //TODO: コンポーネントまたは外部化する
+    const slideNavigation = this.$refs.slideNavigation
+    const detachClass = (entries) => {
+      // console.log(entries[0].isIntersecting)
+      // console.log(entries[0])
+      if (!entries[0].isIntersecting) {
+        this.isNavFadeIn = true
+      } else {
+        this.isNavFadeIn = false
+      }
+    }
+    const observer = new window.IntersectionObserver(detachClass, this.options)
+    observer.observe(slideNavigation)
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 // .l-container {
 // }
 .l-header {
+  $h-nav-h: 100px;
+  height: $h-nav-h;
+  &.slideUp .l-base-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    transition: transform 0.4s 1s;
+    transform: translateY(-$h-nav-h);
+  }
   .logo-size {
     width: 40px;
   }

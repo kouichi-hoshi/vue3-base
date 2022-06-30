@@ -1,17 +1,16 @@
 <template>
   <article class="main">
-    <SlideSplide
-      :slide-items="slideItems"
-      :slide-options="slideOptions"
-      :aspect="aspect"
-      :aria-label="ariaLabel"
-    />
-    <header class="container mx-auto text-center">
-      <h2>HOME</h2>
-    </header>
+    <div class="slide mb-24">
+      <SlideSplide
+        :slide-items="slideItems"
+        :slide-options="slideOptions"
+        :aspect="aspect"
+        :aria-label="ariaLabel"
+      />
+    </div>
     <section class="items container mx-auto">
-      <header>
-        <h3 class="items__title">Item</h3>
+      <header class="mb-8">
+        <headline class="items__title text-center text-4xl"> Item </headline>
       </header>
       <div
         class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
@@ -30,6 +29,7 @@
 <script>
 import itemsSample from '../model/itemsSample.js'
 import SlideSplide from '../components/slideSplide.vue'
+import headline from '../components/headline.vue'
 import repeatCard from '../components/repeatCard.vue'
 
 export default {
@@ -65,7 +65,7 @@ export default {
       aspect
     }
   },
-  components: { SlideSplide, repeatCard }
+  components: { SlideSplide, repeatCard, headline }
 }
 </script>
 

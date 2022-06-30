@@ -77,37 +77,35 @@ const globalNavTag = 'li'
     </div>
 
     <div class="l-footer">
-      <slot name="footer">
-        <baseFooter :base-Footer-slot="baseFooterSlot">
-          <template v-slot:logo>
-            <logoMark class="logo-size" />
-          </template>
-          <template v-slot:title>
-            <baseTitle :site-title="siteTitle" class="text-xl font-bold" />
-          </template>
-          <template v-slot:text>
-            <p>{{ siteText }}</p>
-          </template>
-          <template v-slot:navigation>
-            <nav class="base-navigation flex justify-end">
-              <ul class="flex">
-                <baseNavigation
-                  class="flex"
-                  inner-class="ml-6"
-                  :links="linkData"
-                  :outer-tag-name="globalNavTag"
-                />
-                <baseNavigation
-                  class="flex"
-                  inner-class="ml-6"
-                  :links="snsLinkData"
-                  :outer-tag-name="globalNavTag"
-                />
-              </ul>
-            </nav>
-          </template>
-        </baseFooter>
-      </slot>
+      <baseFooter :base-footer-slot="baseFooterSlot">
+        <template v-slot:logo>
+          <logoMark class="logo-size" />
+        </template>
+        <template v-slot:title>
+          <baseTitle :site-title="siteTitle" class="text-xl font-bold" />
+        </template>
+        <template v-slot:text>
+          <p>{{ siteText }}</p>
+        </template>
+        <template v-slot:navigation>
+          <nav class="base-navigation flex justify-end">
+            <ul class="flex">
+              <baseNavigation
+                class="flex"
+                inner-class="ml-6"
+                :links="linkData"
+                :outer-tag-name="globalNavTag"
+              />
+              <baseNavigation
+                class="flex"
+                inner-class="ml-6"
+                :links="snsLinkData"
+                :outer-tag-name="globalNavTag"
+              />
+            </ul>
+          </nav>
+        </template>
+      </baseFooter>
     </div>
   </div>
 </template>

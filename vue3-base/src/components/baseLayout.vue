@@ -16,6 +16,14 @@ const baseHeaderSlot = {
   navigation: true
 }
 
+// baseFooterのslotの有効化/無効化を設定
+const baseFooterSlot = {
+  logo: true,
+  title: true,
+  text: false,
+  navigation: true
+}
+
 // サイトのタイトルを取得
 const siteTitle = import.meta.env.VITE_SITE_TITLE
 
@@ -70,7 +78,35 @@ const globalNavTag = 'li'
 
     <div class="l-footer">
       <slot name="footer">
-        <baseFooter />
+        <baseFooter :base-Footer-slot="baseFooterSlot">
+          <template v-slot:logo>
+            <logoMark class="logo-size" />
+          </template>
+          <template v-slot:title>
+            <baseTitle :site-title="siteTitle" class="text-xl font-bold" />
+          </template>
+          <template v-slot:text>
+            <p>{{ siteText }}</p>
+          </template>
+          <template v-slot:navigation>
+            <nav class="base-navigation flex justify-end">
+              <ul class="flex">
+                <baseNavigation
+                  class="flex"
+                  inner-class="ml-6"
+                  :links="linkData"
+                  :outer-tag-name="globalNavTag"
+                />
+                <baseNavigation
+                  class="flex"
+                  inner-class="ml-6"
+                  :links="snsLinkData"
+                  :outer-tag-name="globalNavTag"
+                />
+              </ul>
+            </nav>
+          </template>
+        </baseFooter>
       </slot>
     </div>
   </div>
@@ -125,6 +161,9 @@ export default {
 }
 // .l-main {
 // }
-// .l-footer {
-// }
+.l-footer {
+  .logo-size {
+    width: 40px;
+  }
+}
 </style>

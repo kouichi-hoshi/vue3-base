@@ -116,7 +116,7 @@ export default {
     return {
       isNavFadeIn: false,
       options: {
-        threshold: [1]
+        threshold: [0.1]
       },
       isIntersectingElement: false
     }
@@ -145,12 +145,14 @@ export default {
 .l-header {
   $h-nav-h: 100px;
   height: $h-nav-h;
-  &.slideUp .l-base-header {
+  .l-base-header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 2;
-    transition: transform 0.4s 1s;
+    transition: transform 0.4s;
+  }
+  &.slideUp .l-base-header {
     transform: translateY(-$h-nav-h);
   }
   .logo-size {

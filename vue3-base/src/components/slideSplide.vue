@@ -36,9 +36,6 @@ export default defineComponent({
   components: {
     Splide,
     SplideSlide
-  },
-  created() {
-    console.log(this.ariaLabel)
   }
 })
 </script>

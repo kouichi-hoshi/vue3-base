@@ -1,9 +1,9 @@
 <template>
   <footer class="l-base-footer container mx-auto py-24">
-    <div v-if="checkSlot('logo')" class="l-base-footer__logo mr-2">
+    <div v-if="checkSlot('logo')" class="l-base-footer__logo mb-2">
       <slot name="logo" />
     </div>
-    <div v-if="checkSlot('title')" class="l-base-footer__title mr-4">
+    <div v-if="checkSlot('title')" class="l-base-footer__title">
       <slot name="title" />
     </div>
     <div v-if="checkSlot('text')" class="l-base-footer__text mr-2">

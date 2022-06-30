@@ -20,7 +20,7 @@ const baseHeaderSlot = {
 const baseFooterSlot = {
   logo: true,
   title: true,
-  text: false,
+  text: true,
   navigation: true
 }
 

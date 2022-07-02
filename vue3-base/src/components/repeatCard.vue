@@ -1,5 +1,5 @@
 <template>
-  <div v-for="(item, key) in items" :class="cardClass" :key="key">
+  <div v-for="(item, key) in items" :class="cardClass" :key="key" v-scroll>
     <a :href="item.href">
       <p>
         <img
@@ -62,3 +62,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@use '../assets/css/mixin.scss';
+
+.scroll-up {
+  @include mixin.scrollTransform();
+}
+</style>

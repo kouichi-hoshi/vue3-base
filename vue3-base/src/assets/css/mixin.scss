@@ -53,3 +53,12 @@
     }
   }
 }
+
+// scroll
+@mixin scrollTransform($direction: Y, $translate: 60px, $speed: 0.4s) {
+  transition: transform $speed;
+  transform: translate#{$direction }($translate);
+  &.active {
+    transform: translate#{$direction }(0);
+  }
+}

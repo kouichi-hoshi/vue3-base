@@ -16,7 +16,7 @@
         class="items__item-wrap grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
       >
         <repeatCard
-          card-class="items__item"
+          card-class="items__item scroll-up"
           :items="items"
           :imgPath="itemsPath"
           titleClass="mt-2 text-xl"
@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 // .main {
 //   .items {
 //     &__item-wrap {

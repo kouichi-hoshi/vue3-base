@@ -39,7 +39,7 @@ export default {
     noImage: {
       // 画像がない場合に代りに表示するダミー画像のパス
       type: String,
-      default: '/src/assets/images/common/no-image.png'
+      default: '/images/common/no-image.png'
     },
     cardClass: {
       type: String,

@@ -1,11 +1,17 @@
 <template>
-  <component :is="tagName" :class="class">
-    <slot>headline</slot>
-  </component>
+  <IntersectionOA>
+    <component :is="tagName" :class="class">
+      <slot>headline</slot>
+    </component>
+  </IntersectionOA>
 </template>
 
 <script>
+import IntersectionOA from '../components/IntersectionOA.vue'
 export default {
+  components: {
+    IntersectionOA
+  },
   name: 'HeadLine',
   props: {
     tagName: {
